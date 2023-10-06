@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>The Caller API</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="page">
+    <div class="page-content">
+        <div class="login-header">
+            <h3>traditional login form.</h3>
+        </div>
+        <form class="login-form" [formGroup]="loginForm" action="submit">
+            <mat-form-field appearance="fill">
+                <mat-label>email</mat-label>
+                <input type="email" matInput placeholder="username@instnt.com" [formControl]="email" required>
+            </mat-form-field>
+            <div class="error-div-style" *ngIf="email.errors && (email.dirty || email.touched)">
+                <mat-error class="error-msg-style"
+                    *ngIf="email.errors && (email.dirty || email.touched) && email.errors['required']">Email is required
+                </mat-error>
+                <mat-error class="error-msg-style"
+                    *ngIf="email.errors && (email.dirty || email.touched) && email.errors['pattern']">Sorry, only
+                    letters
+                    (a-z), numbers (0-9), plus sign (+) and periods (.) are allowed.</mat-error>
+                <mat-error class="error-msg-style"
+                    *ngIf="email.errors && (email.dirty || email.touched) && email.errors['maxlength']">Email should not
+                    have more than 100 characters ({{ email.errors['maxlength'].actualLength }})</mat-error>
+            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>password</mat-label>
+                <input type="password" matInput [formControl]="password" required>
+            </mat-form-field>
+            <div class="error-div-style" *ngIf="password.errors && (password.dirty || password.touched)">
+                <mat-error class="error-msg-style"
+                    *ngIf="password.errors && (password.dirty || password.touched) && password.errors['required']">Password
+                    is required</mat-error>
+                <mat-error class="error-msg-style"
+                    *ngIf="password.errors && (password.dirty || password.touched) && password.errors['minlength']">Password
+                    should have at least 8 characters ({{ password.errors['minlength'].requiredLength }})</mat-error>
+                <mat-error class="error-msg-style"
+                    *ngIf="password.errors && (password.dirty || password.touched) && password.errors['pattern']">Must
+                    contain at least one number, one uppercase and lowercase letter, one special character and at least
+                    8 or
+                    more characters.</mat-error>
+                </div>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </form>
+        <div class="other-login">
+            <h3>Or you can login using a Verifiable Credential</h3>
+            <button mat-raised-button color="primary" (click)="loginWithVC()">Login with VC</button>
+        </div>
+        <div class="other-login">
+            <h3>Registration is powered by Instnt to monitor fraudulent accounts
+            </h3>
+            <button mat-raised-button color="primary" routerLink="/login/register">Registration Powered By Instnt</button>
+        </div>
+
+    </div>
+</div>

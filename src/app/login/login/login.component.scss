@@ -1,0 +1,43 @@
+// add dropshadow for toolbar on top
+mat-toolbar {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // height: 90vh;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; 
+}
+.error-msg-style {
+    text-align: left;
+    margin-left: 10px;
+}
+.error-div-style {
+    margin-top: -17px;
+}
+
+.other-login {
+    margin-top: 18px;
+    text-align: center;
+    h3 {
+        margin: 0px;
+    }
+    button {
+        width: 100%;
+    }
+}
+

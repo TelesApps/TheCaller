@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "thecaller-95f85": {
+      "hosting": {
+        "TheCaller": [
+          "thecaller-95f85"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "thecaller-95f85"
+  }
+}
