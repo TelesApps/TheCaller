@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 app.get("/notifyUser", (req, res) => {
     console.log("/notifyUser called");
     console.log(req.query);
-    res.status(200).send({ message: "Its Working!", data: req.query });
+    res.status(200).send({ message: "Its Working Now!", data: req.query });
 })
 
 
